@@ -1,4 +1,4 @@
-# Topic 1
+# Topic 1: Running an LLM
 
 ## Notebooks:
 
