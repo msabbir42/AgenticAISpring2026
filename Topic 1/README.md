@@ -1,14 +1,7 @@
-# Table of Contents for Topic 1
+# Topic 1
 
-- [Overview](#overview)
-- [Environment Setup & Prerequisites](#environment-setup--prerequisites)
-- [Hardware Performance & Quantization Benchmarks](#hardware-performance--quantization-benchmarks)
-  - [CPU vs. GPU Execution](#cpu-vs-gpu-execution)
-  - [Impact of 4-bit and 8-bit Quantization](#impact-of-4-bit-and-8-bit-quantization)
-- [Multi-Model MMLU Evaluation](#multi-model-mmlu-evaluation)
-  - [Models Tested (Llama 3.2, Gemma 2B, Qwen 0.5B)](#models-tested)
-  - [Execution Metrics (Real Time, CPU Time, GPU Time)](#execution-metrics)
-- [Visualization & Mistake Analysis](#visualization--mistake-analysis)
-  - [Accuracy & Timing Comparisons](#accuracy--timing-comparisons)
-  - [Interactive Mistake Pattern Heatmaps](#interactive-mistake-pattern-heatmaps)
-- [Acknowledgements & GenAI Usage](#acknowledgements--genai-usage)
+## Notebooks:
+
+[Topic_1.ipynb](https://github.com/msabbir42/AgenticAISpring2026/blob/b92d449b715bcd8c2d49cd19ce7c8fec42901468/Topic%201/Topic_1.ipynb): This notebook contains outlines where I created separate sections for each task. At the begining of the tasks, I mentioned the discussion (if there was anything asked to be done. For example, at the begining of task 6, I compared the results based on the figures generated for that task).
+
+[Files in Colab(Including Notebook)](https://github.com/msabbir42/AgenticAISpring2026/tree/b92d449b715bcd8c2d49cd19ce7c8fec42901468/Topic%201/Files%20in%20Colab(Including%20Notebook)) The folder contains the files used and generated in colab. Specifically, [Topic_1_in_Colab.ipynb](https://github.com/msabbir42/AgenticAISpring2026/blob/b92d449b715bcd8c2d49cd19ce7c8fec42901468/Topic%201/Files%20in%20Colab(Including%20Notebook)/Topic_1_in_Colab.ipynb) contains the notebok I run in colab and the findings.
