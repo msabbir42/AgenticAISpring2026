@@ -1,1 +1,3 @@
 Each topic has its own folder containing a README that explains the files and their contents. The primary file is a Jupyter Notebook named after the topic (for example, [Topic_2.ipynb](https://github.com/msabbir42/AgenticAISpring2026/blob/main/Topic%202/Topic_2.ipynb)), which is organized into distinct sections for every task of the corresponding topic and its corresponding outputs. Where necessary, I have included descriptive notes at the start of these sections.
+
+It can be mentioned that instead of writing different observations in README, I wrote them at the begining of the task so that one can check the output along with the observations very easily.
