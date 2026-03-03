@@ -1,3 +1,6 @@
+# Task 1 & 2
+Joining the meeting and working with partner. 
+
 # Task 3
 
 3.1. Parallel Dispatch (Running tools at the same time)
