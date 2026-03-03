@@ -231,38 +231,37 @@ Agent: There are 3 occurrences of the letter 'w' in the weather report string.
 
 
 ```mermaid
-sequenceDiagram
-    participant U as User
-    participant A as app.stream
-    participant G as Graph
-    participant N as agent
-    participant T as ToolNode
-    participant M as MemorySaver
-    participant H as State History
+flowchart TD
+    user([User Query])
+    stream[chat_with_agent / app.stream()]
+    start([START])
+    agent[agent: call_model]
+    tools[tools: ToolNode]
+    finish([END])
 
-    U->>A: user_query + thread_config
-    A->>G: start run
-    G->>N: call_model(messages)
-
-    alt tool call needed
-        N->>M: checkpoint state
-        N->>T: execute tool(s)
-        T->>M: checkpoint state
-        T-->>N: ToolMessage
-        N->>M: checkpoint state
-        N-->>A: final AI response
-    else no tool call
-        N->>M: checkpoint state
-        N-->>A: final AI response
+    subgraph persistence[Checkpointing / Persistence Layer]
+        memory[MemorySaver checkpointer]
+        thread[(thread_id: portfolio_conversation)]
+        history[get_state_history()]
+        target[target checkpoint]
     end
 
-    A-->>U: streamed output
+    user --> stream
+    stream -->|messages + config| start
+    start --> agent
 
-    U->>H: get_state_history(thread_config)
-    H-->>U: past checkpoints
-    U->>A: rerun with target checkpoint config
-    A->>G: branch from earlier state
-    G->>N: continue from recovered checkpoint
+    agent -.->|tool calls| tools
+    agent -.->|no tool calls| finish
+    tools --> agent
+
+    stream -.->|configurable.thread_id| thread
+    agent -. save checkpoint .-> memory
+    tools -. save checkpoint .-> memory
+    memory <--> thread
+
+    thread --> history
+    history --> target
+    target -. recovered config / branch .-> stream
 ```
 
 
