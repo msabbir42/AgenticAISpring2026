@@ -2,6 +2,9 @@
 The [Topic_3.ipynb](https://github.com/msabbir42/AgenticAISpring2026/blob/36afb156a1ed503991db9668ee9cd1a3ee828736/Topic%203/Topic_3.ipynb) is structured into clearly separated sections. If a specific task does not have a standalone Python file, the corresponding code is implemented directly within the notebook. For instance, in Topic 3, Task 4, all code is contained inside the notebook. This allowed me to iteratively modify and execute the code flexibly.
 
 ## Task 1: Comparing the timing
+
+It can be mentioned instead of running on a single topic, I run on two different topics. [To be honest, I did not notice that it is asked to run on a single topic. After running, explaining, pushing codes to GitHub, I noticed this while double checking things through GenAI]. However, I did not change the codes and findings later, since running two different topics is better to understand more generalizable timing information.
+
 --> Running tasks one at a time (Sequential): 
 Executing the programs one after the other is faster without Ollama. Native execution took only 1.3 minutes, compared to 1.7 minutes with Ollama.
 
@@ -11,6 +14,14 @@ Ollama finished in 1.5 minutes, whereas native execution slowed down significant
 
 --> The Overall Winner: 
 Surprisingly (to me), the absolute fastest way to complete the workload was to skip Ollama entirely and run the programs one at a time (1.3 minutes).
+
+
+--> Here are the raw timing information
+Not Ollama_2_Subjects: 0.5 minutes, Not Ollama_2_Others_Subjects: 0.8 minutes
+Not Ollama_2_Subjects:  0.9 minutes AND Not Ollama_2_Others_Subjects: 1.1 minutes
+
+Use Ollama_2_Subjects: 0.8 minutes, Use Ollama_2_Others_Subjects: 0.9 minutes
+Use Ollama_2_Subjects: 0.6 minutes AND Use Ollama_2_Others_Subjects: 0.9 minutes
 
 
 ## Task 2.3: Understanding a code snippet
