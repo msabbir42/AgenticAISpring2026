@@ -41,7 +41,6 @@ Examples of system prompt:
 
 ================
 TEST 1: Area of a circle
-
 =============
 User: What is the area of a circle with a radius of 5?
 
