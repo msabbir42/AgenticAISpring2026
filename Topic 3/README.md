@@ -24,7 +24,9 @@ response = client.chat.completions.create(
 	
     messages=[{"role": "user", "content": "Say: Working!"}], // Providing the prompt with role and content.
 	
- max_tokens=5 // Limit the generated output to at most 5 tokens.```
+ max_tokens=5 // Limit the generated output to at most 5 tokens.
+
+```
 
 
 # Task 3: 
@@ -37,9 +39,10 @@ Inside the custom_calculator() function, different mathematical calculation appr
 
 Examples of system prompt:
 
-============================================================
+================
 TEST 1: Area of a circle
-============================================================
+
+=============
 User: What is the area of a circle with a radius of 5?
 
 --- Iteration 1 ---
@@ -52,9 +55,10 @@ LLM wants to call 1 tool(s)
 Assistant: The area of a circle with a radius of 5 is approximately 78.54 square units.
 
 
-============================================================
+========================
 TEST 2: Sine function
-============================================================
+
+======================
 User: What is the sine of 0.523 radians?
 
 --- Iteration 1 ---
