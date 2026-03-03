@@ -231,20 +231,37 @@ Agent: There are 3 occurrences of the letter 'w' in the weather report string.
 
 
 ```mermaid
-%%{init: {'flowchart': {'curve': 'linear'}}}%%
-graph TD
-    __start__([__start__]):::first
-    agent(Agent Node)
-    tools(Tool Node)
-    __end__([__end__]):::last
+flowchart TD
+    user([User Query])
+    stream[chat_with_agent / app.stream()]
+    start([START])
+    agent[agent: call_model]
+    tools[tools: ToolNode]
+    finish([END])
 
-    __start__ --> agent
+    subgraph persistence[Checkpointing / Persistence Layer]
+        memory[MemorySaver checkpointer]
+        thread[(thread_id: portfolio_conversation)]
+        history[get_state_history()]
+        target[target checkpoint]
+    end
+
+    user --> stream
+    stream -->|messages + config| start
+    start --> agent
+
+    agent -.->|tool calls| tools
+    agent -.->|no tool calls| finish
     tools --> agent
-    agent -.->|tools_condition: tool calls| tools
-    agent -.->|tools_condition: no tool calls| __end__
 
-    classDef first fill:#dfefff,stroke:#333,stroke-width:1px;
-    classDef last fill:#eaffea,stroke:#333,stroke-width:1px;
+    stream -.->|configurable.thread_id| thread
+    agent -. save checkpoint .-> memory
+    tools -. save checkpoint .-> memory
+    memory <--> thread
+
+    thread --> history
+    history --> target
+    target -. recovered config / branch .-> stream
 ```
 
 
