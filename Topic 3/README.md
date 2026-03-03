@@ -1,5 +1,5 @@
 # Topic 3: Agent Tool Use
-The [https://github.com/msabbir42/AgenticAISpring2026/blob/36afb156a1ed503991db9668ee9cd1a3ee828736/Topic%203/Topic_3.ipynb](notebook) is structured into clearly separated sections. If a specific task does not have a standalone Python file, the corresponding code is implemented directly within the notebook. For instance, in Topic 3, Task 4, all code is contained inside the notebook. This allowed me to iteratively modify and execute the code in a flexible manner.
+The [notebook]([notebook](https://github.com/msabbir42/AgenticAISpring2026/blob/36afb156a1ed503991db9668ee9cd1a3ee828736/Topic%203/Topic_3.ipynb)) is structured into clearly separated sections. If a specific task does not have a standalone Python file, the corresponding code is implemented directly within the notebook. For instance, in Topic 3, Task 4, all code is contained inside the notebook. This allowed me to iteratively modify and execute the code in a flexible manner.
 
 ## Task 1: Comparing the timing
 --> Running tasks one at a time (Sequential): 
