@@ -1,0 +1,38 @@
+# Tasks
+I have set up the llava.
+
+# Exercise 1
+
+Conversations about an image
+
+User:  /Users/..../AI_Agent_Course/Topic 6/Others/Screenshot 2025-11-19 at 5.12.21 PM.jpg
+[System] Image detected at: /Users/wyd2hu/Library/CloudStorage/OneDrive-Personal/AI_Agent_Course/Topic 6/Others/Screenshot 2025-11-19 at 5.12.21 PM.jpg. Processing...
+Assistant:  This image is a screenshot of an Instagram post that features a group photo with captions explaining the scene. The photo shows a man standing in front of a presentation with his hand gesturing towards it, seemingly speaking or presenting to a group of people who are watching attentively. The background indicates that this could be an event or gathering, possibly related to engineering or technology, given the text "at UVa Engineering Lab." The post has received 13 likes and shares, suggesting engagement with the content. There are also some hashtags associated with the image, including "#uvavirginia" and a link to the UVA School of Engineering website. 
+
+User:  Describe the person who is presenting
+Assistant:  In the image, there is one person who appears to be in the act of presenting or speaking to an audience. This individual is standing with their arm extended towards the presentation, which could indicate that they are highlighting something important on the screen. The posture and expression suggest that the presenter might be engaging with the audience or explaining a particular point. 
+
+User:  okay
+Assistant:  If you have any further questions or if there's anything else I can help you with, feel free to ask! 
+
+User:  exit
+
+Goodbye!
+
+
+
+# Exercise 2
+I recorded a video and extracted its frames as images. I then provided the directory containing those images as input for the analysis pipeline.
+
+Here is the list of enter and exit times. The first and second values presents enter and exit times respectively. 
+[['0 seconds', '2 seconds'], ['4 seconds', '6 seconds'], ['36 seconds', '38 seconds'], ['52 seconds', '56 seconds'], ['68 seconds', '72 seconds'], ['76 seconds', '78 seconds'], ['82 seconds', '86 seconds'], ['88 seconds', '92 seconds'], ['110 seconds', '112 seconds']]
+
+I observed that LLaVA is relatively inaccurate in identifying people in the images. The correct continuous interval should have been 70 to 90 seconds. Although the model detected the presence of people, it fragmented this continuous segment into multiple shorter intervals.
+
+
+# Acknowledgement
+
+I acknowledge that I used GenAI for this topic like all other topics and I explicitly provided the prompts links in the Acknowledgement section of the notebook for each topic. Here, I am acknowledging in the README file, since there was a setence "You will be writing your own code for the exercises" in the topic, though GenAI is allowed in the course and to be very transparent about the usage, I am providing the link of the prompts here along with the Acknowledgement section of the notebook.
+
+1. https://chatgpt.com/share/69a74d4c-2838-8012-b602-85970499c4fa
+2. https://gemini.google.com/share/75593cf65ce2
