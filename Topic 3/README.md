@@ -211,9 +211,13 @@ TEST 2: Conversation Context (Memory)
 User: How many 'w's are in that weather report string?
 -----------
 Agent Action: Calling 1 tool(s)...
+
   -> count_letter({'letter': 'w', 'text': 'The weather in Denver is snowy with a temperature of 30°F.'})
+  
 Tool Result (count_letter): 3
+
 Agent: There are 3 occurrences of the letter 'w' in the weather report string.
+
 
 
 <pre>
