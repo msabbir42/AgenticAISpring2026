@@ -219,15 +219,15 @@ Agent: There are 3 occurrences of the letter 'w' in the weather report string.
 ```
 %%{init: {'flowchart': {'curve': 'linear'}}}%%
 graph TD;
-	__start__([<p>__start__</p>]):::first
-	agent(Agent Node)
-	tools(Tool Node)
-	__end__([<p>__end__</p>]):::last
-	
-	__start__ --> agent;
-	tools --> agent;
-	agent -.->|tools_condition: tool calls| tools;
-	agent -.->|tools_condition: no tool calls| __end__;
+    __start__([__start__]):::first
+    agent(Agent Node)
+    tools(Tool Node)
+    __end__([__end__]):::last
+    
+    __start__ --> agent;
+    tools --> agent;
+    agent -.->|tools_condition: tool calls| tools;
+    agent -.->|tools_condition: no tool calls| __end__;
 ```
 
 
