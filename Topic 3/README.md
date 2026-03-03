@@ -16,7 +16,7 @@ Surprisingly (to me), the absolute fastest way to complete the workload was to s
 
 ## Task 2.3: Understanding a code snippet
 
-client = OpenAI() // Create an open AI client
+`client = OpenAI() // Create an open AI client
 
 response = client.chat.completions.create(
 
@@ -24,7 +24,7 @@ response = client.chat.completions.create(
 	
     messages=[{"role": "user", "content": "Say: Working!"}], // Providing the prompt with role and content.
 	
- max_tokens=5 // Limit the generated output to at most 5 tokens.
+ max_tokens=5 // Limit the generated output to at most 5 tokens.`
 
 
 # Task 3: 
