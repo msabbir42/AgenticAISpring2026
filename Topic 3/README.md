@@ -16,7 +16,8 @@ Surprisingly (to me), the absolute fastest way to complete the workload was to s
 
 ## Task 2.3: Understanding a code snippet
 
-```client = OpenAI() // Create an open AI client
+```
+client = OpenAI() // Create an open AI client
 
 response = client.chat.completions.create(
 
