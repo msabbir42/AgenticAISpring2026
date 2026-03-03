@@ -232,36 +232,35 @@ Agent: There are 3 occurrences of the letter 'w' in the weather report string.
 
 ```mermaid
 flowchart TD
-    user([User Query])
-    stream[chat_with_agent / app.stream()]
-    start([START])
-    agent[agent: call_model]
-    tools[tools: ToolNode]
-    finish([END])
+    user["User Query"]
+    stream["Stream Runner"]
+    start(["START"])
+    agent["Agent Node"]
+    tools["Tool Node"]
+    finish(["END"])
 
-    subgraph persistence[Checkpointing / Persistence Layer]
-        memory[MemorySaver checkpointer]
-        thread[(thread_id: portfolio_conversation)]
-        history[get_state_history()]
-        target[target checkpoint]
+    subgraph persistence["Checkpointing Layer"]
+        memory["MemorySaver"]
+        thread[("Thread ID")]
+        history["State History"]
+        target["Recovered Checkpoint"]
     end
 
     user --> stream
-    stream -->|messages + config| start
+    stream --> start
     start --> agent
-
     agent -.->|tool calls| tools
     agent -.->|no tool calls| finish
     tools --> agent
 
-    stream -.->|configurable.thread_id| thread
-    agent -. save checkpoint .-> memory
-    tools -. save checkpoint .-> memory
+    stream -.-> thread
+    agent -.-> memory
+    tools -.-> memory
     memory <--> thread
 
     thread --> history
     history --> target
-    target -. recovered config / branch .-> stream
+    target -.-> stream
 ```
 
 
