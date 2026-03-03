@@ -39,7 +39,7 @@ Inside the custom_calculator() function, different mathematical calculation appr
 
 Examples of system prompt:
 
-================
+============
 TEST 1: Area of a circle
 =============
 User: What is the area of a circle with a radius of 5?
@@ -54,10 +54,10 @@ LLM wants to call 1 tool(s)
 Assistant: The area of a circle with a radius of 5 is approximately 78.54 square units.
 
 
-========================
+============
 TEST 2: Sine function
+============
 
-======================
 User: What is the sine of 0.523 radians?
 
 --- Iteration 1 ---
@@ -75,9 +75,9 @@ Assistant: The sine of 0.523 radians is approximately 0.4995.
 As can be seen from the traces, the intended functions are being used correctly. For instance, in the question "What is the sine of the difference between the number of i's and the number of s's in Mississippi riverboats?", both count_letter() and custom_calculator() functions were used. Similarly, when we wanted to use all defined tools through the query "Get the weather of New York. Count the number of 'e's in that weather string. Multiply that count by New York's elevation.", we see all 4 tools are called (please, see the traces). Similarly, we achieved seqential chaining to hit the 5 iterations limit in the outer loop, at the last test.
 
 
-============================================================
+============
 TEST 1: Parallel Tool Calls
-============================================================
+============
 User: Are there more i's than s's in Mississippi riverboats?
 
 --- Iteration 1 ---
@@ -93,9 +93,9 @@ LLM wants to call 2 tool(s)
 Assistant: In the phrase "Mississippi riverboats," there are 5 occurrences of the letter 'i' and 5 occurrences of the letter 's'. Therefore, there are not more 'i's than 's's; they are equal.
 
 
-============================================================
+============
 TEST 2: Sequential Chaining (Parallel -> Sequential)
-============================================================
+============
 User: What is the sine of the difference between the number of i's and the number of s's in Mississippi riverboats?
 
 --- Iteration 1 ---
@@ -117,9 +117,9 @@ LLM wants to call 1 tool(s)
 Assistant: The sine of the difference between the number of 'i's and the number of 's's in "Mississippi riverboats" is 0.0.
 
 
-============================================================
+============
 TEST 3: Using All Tools in One Query
-============================================================
+============
 User: Get the weather of New York. Count the number of 'e's in that weather string. Multiply that count by New York's elevation.
 
 --- Iteration 1 ---
@@ -151,9 +151,9 @@ New York's elevation is 10 meters.
 Multiplying the count of 'e's (0) by the elevation (10 meters) gives a result of 0.0.
 
 
-============================================================
+============
 TEST 4: Hitting the 5 Turn Limit
-============================================================
+============
 User: Start with the number 1. Add 1 to it using the calculator. Take that exact result and add 1 to it using the calculator again. Repeat this exact sequential process 6 times, strictly waiting for each tool result before doing the next tool call.
 
 --- Iteration 1 ---
@@ -193,30 +193,30 @@ System Warning: Max iterations reached
 
 As can be seen below, the output of the past conversation is recovered, which is through the usage of MemorySaver().
 
-============================================================
+============
 TEST 1: Tool Use (Starting the conversation)
-============================================================
+============
 
 User: What's the weather like in Denver?
---------------------------------------------------
+-----------
 Agent Action: Calling 1 tool(s)...
   -> get_weather({'location': 'Denver'})
 Tool Result (get_weather): Snowy, 30°F
 Agent: The weather in Denver is snowy with a temperature of 30°F.
 
-============================================================
+============
 TEST 2: Conversation Context (Memory)
-============================================================
+============
 
 User: How many 'w's are in that weather report string?
---------------------------------------------------
+-----------
 Agent Action: Calling 1 tool(s)...
   -> count_letter({'letter': 'w', 'text': 'The weather in Denver is snowy with a temperature of 30°F.'})
 Tool Result (count_letter): 3
 Agent: There are 3 occurrences of the letter 'w' in the weather report string.
 
 
-
+```
 %%{init: {'flowchart': {'curve': 'linear'}}}%%
 graph TD;
 	__start__([<p>__start__</p>]):::first
@@ -228,7 +228,7 @@ graph TD;
 	tools --> agent;
 	agent -.->|tools_condition: tool calls| tools;
 	agent -.->|tools_condition: no tool calls| __end__;
-
+```
 
 
 
